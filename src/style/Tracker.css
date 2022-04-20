@@ -1,0 +1,90 @@
+#search-bar{
+    justify-self: center; 
+   
+}
+
+#search-bar, #example{
+    height:4em;
+    
+}
+input:hover{
+    box-shadow: 0 0 20px rgb(34, 0, 187);
+}
+
+#search-div{
+    width: 80%;
+    padding-left: 2%;
+}
+
+.Tracker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 8%;
+    
+}
+
+.task-history{
+    align-items: center;
+    font-weight: bold;
+}
+
+#search-addon, .search-icon{
+    cursor: pointer;
+   
+}
+
+.search-icon{
+    padding-left: 5px;
+}
+
+#search-addon{
+    outline-offset: 4px;
+    height:4em;
+    border-radius:10px;
+    color:#fff
+    
+    
+
+}
+#search-addon {background-image: linear-gradient(to right, #50C9C3 0%, #96DEDA  69%, #50C9C3  100%)}
+.datepicker{
+    width:40%;
+   
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+}
+
+/* #date-picker{
+    padding-left:10px
+} */
+
+
+.search-button {background-image: linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%)}
+.search-button {
+   margin: 10px;
+   white-space: nowrap;
+   padding: 10px 15px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .search-button:hover {
+   color: #fff;
+   text-decoration: none;
+ }
+
+#icon2{
+    margin-left: 5px;
+}

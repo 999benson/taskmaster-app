@@ -2,6 +2,7 @@ import React from "react";
 import "../style/Tracker.css";
 import { FaSearch } from "react-icons/fa";
 import TaskDoneManager from "../components/TaskDoneManager";
+import History from "../components/History";
 
 function Tracker() {
   const tdm = new TaskDoneManager();
@@ -74,6 +75,7 @@ function Tracker() {
           </label>
         </form>
       </div>
+      <History />
     </div>
   );
 }

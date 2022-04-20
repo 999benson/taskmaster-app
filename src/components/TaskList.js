@@ -88,7 +88,7 @@ const TaskList = ({ tasks, setTasks, setCheckDoneTasks }) => {
   /**
    * updateTask function updates tasks after user edits
    * @param {number} taskId takes id of task that is edited
-   * @param {string} newValue takes new user input of task (text)
+   * @param {string} newVadsfalue takes new user input of task (text)
    * @returns
    */
   const updateTask = (taskId, newValue) => {
@@ -103,7 +103,10 @@ const TaskList = ({ tasks, setTasks, setCheckDoneTasks }) => {
       <div className="reset">
         <RiCloseCircleLine
           size={35}
-          onClick={() => setTasks([])}
+          onClick={() => {
+            setTasks([]);
+            alert("List cleared!");
+          }}
           className="clear-icon"
           data-hover="clear list"
         />

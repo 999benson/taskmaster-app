@@ -27,28 +27,25 @@ const MainPage = ({ tdm }) => {
     setTasks(newTaskList);
     checkDoneTasks.forEach((task) => tdm.saveDoneList(task));
     setCheckDoneTasks([]);
+    alert("Tasks Saved!");
   };
 
   return (
     <div className="main-page">
-        <div className="col-sm">
-          <TaskList
-            tasks={tasks}
-            setTasks={setTasks}
-            setCheckDoneTasks={setCheckDoneTasks}
-          />
-        </div>
-        <div className="col-sm">
-          <Done
-            checkDoneTasks={checkDoneTasks}
-            handleSaveList={handleSaveList}
-          />
-        </div>
-        <div className="col-sm">
-          <ProgressCheck percent={percent} checkDoneTasks={checkDoneTasks} />
-        </div>
+      <div className="col-sm">
+        <TaskList
+          tasks={tasks}
+          setTasks={setTasks}
+          setCheckDoneTasks={setCheckDoneTasks}
+        />
       </div>
-    
+      <div className="col-sm">
+        <Done checkDoneTasks={checkDoneTasks} handleSaveList={handleSaveList} />
+      </div>
+      <div className="col-sm">
+        <ProgressCheck percent={percent} checkDoneTasks={checkDoneTasks} />
+      </div>
+    </div>
   );
 };
 MainPage.propTypes = {

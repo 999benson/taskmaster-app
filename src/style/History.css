@@ -1,4 +1,22 @@
 .history-box{
     width: 90%;
-    padding-top: 10%;
+    padding-top: 2%;
+    
 }
+
+.History {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 60%;
+    min-height: 500px;
+    background-image: linear-gradient(to right, #ffcd29 0%, #f6a139 100%);
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+  
+  }
+
+ 

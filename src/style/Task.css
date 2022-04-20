@@ -22,6 +22,7 @@ h1 {
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .task-input {
@@ -44,7 +45,7 @@ h1 {
 }
 
 .task-button {
-  padding: 16px;
+  padding: 16px 13px;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -81,7 +82,7 @@ h1 {
   position: relative;
 }
 
-/* .task-row {
+.task-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +97,7 @@ h1 {
   padding: 16px;
   border-radius: 5px;
   width: 90%;
-} */
+}
 
 .task-row:nth-child(4n + 1) {
   background: linear-gradient(
@@ -165,7 +166,7 @@ h1 {
     margin: 128px auto;
     border-radius: 10px;
     padding-bottom: 32px;
-    
+  
   }
   
   .date{

@@ -5,6 +5,7 @@ function History() {
   return (
     <div className="History">
       <div className="history-box">
+        <h1 className="search-result">Search Result</h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex
         aliquam perspiciatis, praesentium, rerum repellendus harum adipisci
         culpa consequatur beatae accusamus assumenda at maxime quod eveniet

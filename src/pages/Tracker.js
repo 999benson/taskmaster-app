@@ -12,14 +12,11 @@ function Tracker() {
   return (
     <div className="Tracker ">
       <h1 className="task-history">Task</h1>
-
+      Please input exact full task
       <form
         onSubmit={(e) => {
-          // setSearchRes([]);
           e.preventDefault();
-          // tdm.searchDoneWord(e.target.searchword.value);
-          console.log(searchRes);
-          setSearchRes(tdm.searchDoneWord(e.target.searchword.value));
+          tdm.searchDoneWord(e.target.searchword.value, setSearchRes);
         }}
       >
         <div className="input-group mb-3">
@@ -43,7 +40,6 @@ function Tracker() {
           </div>
         </div>
       </form>
-
       <div
         id="date-picker"
         className="md-form md-outline input-with-post-icon datepicker"
@@ -52,13 +48,9 @@ function Tracker() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setSearchRes([]);
             const queryDate = e.target.datename.value;
             const newDate = queryDate.replaceAll("-", "/");
-            // tdm.searchDoneDate(newDate);
-            setSearchRes([...searchRes, tdm.searchDoneDate(newDate)]);
-            console.log("DATE", newDate);
-            console.log("DATE VALUE", e.target.datename.value);
+            tdm.searchDoneDate(newDate, setSearchRes);
           }}
         >
           <input

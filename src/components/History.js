@@ -7,12 +7,17 @@ function History({ searchRes }) {
     <div className="History">
       <div className="history-box">
         <h1 className="search-result">Search Result</h1>
-        {searchRes.map((data, i) => (
-          <div key={i} className="data-row">
-            {data}
-            {console.log(data)}
-          </div>
-        ))}
+        {searchRes[0] !== null && searchRes.length > 0
+          ? searchRes.map((data, i) => (
+              <div key={i} className="data-row">
+                Task: {data.text}
+                <br />
+                <br />
+                Date: {data.date}
+                {console.log("DATA in HISTORY", data)}
+              </div>
+            ))
+          : "No Result"}
       </div>
     </div>
   );

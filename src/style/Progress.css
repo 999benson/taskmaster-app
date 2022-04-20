@@ -7,6 +7,7 @@
     background-image: linear-gradient( 90.1deg,  rgba(158,252,203,1) 16.8%, rgba(63,100,255,1) 105.2% );
     text-align: center;
     margin: 128px auto;
+    margin-left: 50px;
     border-radius: 10px;
     padding-bottom: 32px;
     position: fixed;
@@ -15,8 +16,8 @@
   h4 {
     color: #fff;
     font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .percentage{

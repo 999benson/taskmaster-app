@@ -33,15 +33,29 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
     });
   };
 
-  tdm.searchDoneWord = (query) => {
+  // tdm.searchDoneWord = (query) => {
+  //   return new Promise((resolve, reject) => {
+  //     //do something, fetch something....
+  //     //you guessed it, mongo queries go here.
+
+  //     let dataReturned = db.collection('tasks').find({text:{ $regex: query }}, {}).asArray();
+
+  //     console.log('tasks');
+  //     let somethingWentWrong = (dataReturned == null);
+  //     (somethingWentWrong)
+  //       ? reject('cannot find task')
+  //       : resolve(dataReturned);
+  // })
+  // };
+
+  tdm.searchDoneWord = (query, set) => {
     const db = new IndexedDb(
       { namespace: dbName },
       function () {
         // Add a collection to the database
         db.addCollection("tasks", function () {
           db.tasks.findOne({ text: { $regex: query } }, {}, function (res) {
-            console.log("TASK SEARCH: " + res);
-            return res;
+            set([res]);
           });
         });
       },
@@ -49,17 +63,18 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
         alert("some error!");
       }
     );
+    // console.log("DATA[0]", data[0]);
+    // return data[0];
   };
 
-  tdm.searchDoneDate = (query) => {
-    console.log(typeof query);
+  tdm.searchDoneDate = (query, set) => {
     const db = new IndexedDb(
       { namespace: dbName },
       function () {
         // Add a collection to the database
         db.addCollection("tasks", function () {
           db.tasks.findOne({ date: query }, {}, function (res) {
-            console.log("DATE SEARCH: " + res);
+            set([res]);
           });
         });
       },

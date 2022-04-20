@@ -42,7 +42,7 @@ const MainPage = ({ tdm }) => {
       <div className="col-sm">
         <Done checkDoneTasks={checkDoneTasks} handleSaveList={handleSaveList} />
       </div>
-      <div className="col-sm">
+      <div className="col-sm" id="progress-c">
         <ProgressCheck percent={percent} checkDoneTasks={checkDoneTasks} />
       </div>
     </div>

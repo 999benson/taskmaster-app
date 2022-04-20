@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../style/Navbar.css";
 import MainPage from "./MainPage";
-import { Link } from "react-router-dom";
 import TaskDoneManager from "../components/TaskDoneManager";
 import Tracker from "./Tracker";
 
@@ -29,9 +28,16 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <p className="nav-link">My Tasks</p>
-                </Link>
+                {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+                <p
+                  className="nav-link"
+                  onClick={() => {
+                    setClickTrack(false);
+                  }}
+                >
+                  My Tasks
+                </p>
+                {/* </Link> */}
               </li>
               <li className="nav-item">
                 {/* <Link to="/Tracker" style={{ textDecoration: "none" }}> */}

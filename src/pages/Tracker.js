@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/Tracker.css";
 import { FaSearch } from "react-icons/fa";
 import TaskDoneManager from "../components/TaskDoneManager";
@@ -6,15 +6,20 @@ import History from "../components/History";
 
 function Tracker() {
   const tdm = new TaskDoneManager();
+  const [searchRes, setSearchRes] = useState([]);
 
+  console.log(searchRes);
   return (
     <div className="Tracker ">
       <h1 className="task-history">Task</h1>
 
       <form
         onSubmit={(e) => {
+          // setSearchRes([]);
           e.preventDefault();
-          tdm.searchDoneWord(e.target.searchword.value);
+          // tdm.searchDoneWord(e.target.searchword.value);
+          console.log(searchRes);
+          setSearchRes(tdm.searchDoneWord(e.target.searchword.value));
         }}
       >
         <div className="input-group mb-3">
@@ -47,9 +52,11 @@ function Tracker() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            setSearchRes([]);
             const queryDate = e.target.datename.value;
             const newDate = queryDate.replaceAll("-", "/");
-            tdm.searchDoneDate(newDate);
+            // tdm.searchDoneDate(newDate);
+            setSearchRes([...searchRes, tdm.searchDoneDate(newDate)]);
             console.log("DATE", newDate);
             console.log("DATE VALUE", e.target.datename.value);
           }}
@@ -75,7 +82,7 @@ function Tracker() {
           </label>
         </form>
       </div>
-      <History />
+      <History searchRes={searchRes} />
     </div>
   );
 }

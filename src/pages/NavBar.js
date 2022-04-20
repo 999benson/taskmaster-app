@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/Navbar.css";
 import MainPage from "./MainPage";
 import { Link } from "react-router-dom";
 import TaskDoneManager from "../components/TaskDoneManager";
+import Tracker from "./Tracker";
 
 function NavBar() {
   //create instance of TaskDoneManager tdm object(db) and use it as prop for MainPage component
   const tdm = new TaskDoneManager();
+  const [clickTrack, setClickTrack] = useState(false);
 
   return (
     <div>
@@ -32,17 +34,30 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/Tracker" style={{ textDecoration: "none" }}>
-                  <p className="nav-link">Tracker</p>
-                </Link>
+                {/* <Link to="/Tracker" style={{ textDecoration: "none" }}> */}
+                <p
+                  className="nav-link"
+                  onClick={() => {
+                    setClickTrack(true);
+                  }}
+                >
+                  Tracker
+                </p>
+                {/* </Link> */}
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div className="mainpage">
-        <MainPage tdm={tdm} />
-      </div>
+      {clickTrack ? (
+        <div className="tracker-div">
+          <Tracker />
+        </div>
+      ) : (
+        <div className="mainpage">
+          <MainPage tdm={tdm} />
+        </div>
+      )}
     </div>
   );
 }

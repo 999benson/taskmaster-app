@@ -40,7 +40,8 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
         // Add a collection to the database
         db.addCollection("tasks", function () {
           db.tasks.findOne({ text: { $regex: query } }, {}, function (res) {
-            console.log("TASK SEARCH: " + res.text);
+            console.log("TASK SEARCH: " + res);
+            return res;
           });
         });
       },
@@ -58,7 +59,7 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
         // Add a collection to the database
         db.addCollection("tasks", function () {
           db.tasks.findOne({ date: query }, {}, function (res) {
-            console.log("DATE SEARCH: " + res.date);
+            console.log("DATE SEARCH: " + res);
           });
         });
       },

@@ -13,10 +13,25 @@
     min-height: 500px;
     background-image: linear-gradient(to right, #ffcd29 0%, #f6a139 100%);
     text-align: center;
-    margin: 128px auto;
+    margin: 50px auto;
     border-radius: 10px;
     padding-bottom: 32px;
   
   }
 
- 
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px auto;
+    color: #fff;
+    background: linear-gradient(
+      90deg,
+      rgb(178, 0, 233) 0%,
+      rgb(186, 54, 247) 100%
+    );
+  
+    padding: 16px;
+    border-radius: 5px;
+    width: 90%;
+  }

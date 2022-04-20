@@ -1,18 +1,24 @@
 import React from "react";
 import "../style/History.css";
+import PropTypes from "prop-types";
 
-function History() {
+function History({ searchRes }) {
   return (
     <div className="History">
       <div className="history-box">
         <h1 className="search-result">Search Result</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex
-        aliquam perspiciatis, praesentium, rerum repellendus harum adipisci
-        culpa consequatur beatae accusamus assumenda at maxime quod eveniet
-        voluptatibus quasi qui consectetur.
+        {searchRes.map((data, i) => (
+          <div key={i} className="data-row">
+            {data}
+            {console.log(data)}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
+History.propTypes = {
+  searchRes: PropTypes.array.isRequired,
+};
 export default History;

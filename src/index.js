@@ -3,16 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Tracker from "./pages/Tracker";
+import { BrowserRouter } from "react-router-dom";
+// import Tracker from "./pages/Tracker";
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
-    <Routes>
+    {/* <Routes>
       <Route path="/" />
       <Route path="/Tracker" element={<Tracker />} />
-    </Routes>
+    </Routes> */}
   </BrowserRouter>,
   document.getElementById("root")
 );

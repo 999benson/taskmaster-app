@@ -28,7 +28,6 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                {/* <Link to="/" style={{ textDecoration: "none" }}> */}
                 <p
                   className="nav-link"
                   onClick={() => {
@@ -37,10 +36,8 @@ function NavBar() {
                 >
                   My Tasks
                 </p>
-                {/* </Link> */}
               </li>
               <li className="nav-item">
-                {/* <Link to="/Tracker" style={{ textDecoration: "none" }}> */}
                 <p
                   className="nav-link"
                   onClick={() => {
@@ -49,7 +46,6 @@ function NavBar() {
                 >
                   Tracker
                 </p>
-                {/* </Link> */}
               </li>
             </ul>
           </div>

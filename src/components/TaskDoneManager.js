@@ -33,21 +33,11 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
     });
   };
 
-  // tdm.searchDoneWord = (query) => {
-  //   return new Promise((resolve, reject) => {
-  //     //do something, fetch something....
-  //     //you guessed it, mongo queries go here.
-
-  //     let dataReturned = db.collection('tasks').find({text:{ $regex: query }}, {}).asArray();
-
-  //     console.log('tasks');
-  //     let somethingWentWrong = (dataReturned == null);
-  //     (somethingWentWrong)
-  //       ? reject('cannot find task')
-  //       : resolve(dataReturned);
-  // })
-  // };
-
+  /**
+   * Query DB by keyword (can only match by exact string)
+   * @param {string} query take argument string
+   * @param {function} set method passed in to pass back result to searchRes array
+   */
   tdm.searchDoneWord = (query, set) => {
     const db = new IndexedDb(
       { namespace: dbName },
@@ -63,10 +53,13 @@ function TaskDoneManager(_dbName = "TaskDoneDB") {
         alert("some error!");
       }
     );
-    // console.log("DATA[0]", data[0]);
-    // return data[0];
   };
 
+  /**
+   * Query DB by date
+   * @param {string} query takes in date (user selects with date input)
+   * @param {function} set method passed in to pass back result to searchRes array
+   */
   tdm.searchDoneDate = (query, set) => {
     const db = new IndexedDb(
       { namespace: dbName },
